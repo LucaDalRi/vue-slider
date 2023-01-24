@@ -29,20 +29,8 @@
                 <div class="thumbs">
                     <div class="prev" @click="previousSlide()"></div>
                     <div class="next" @click="nextSlide()"></div>
-                    <div class="thumb active" @click="this.activeImg = 0">
-                        <img :src="slides[0].image" alt="Svezia" />
-                    </div>
-                    <div class="thumb" @click="this.activeImg = 1">
-                        <img :src="slides[1].image" alt="Ratchet & Clank" />
-                    </div>
-                    <div class="thumb" @click="this.activeImg = 2">
-                        <img :src="slides[2].image" alt="Fortnite" />
-                    </div>
-                    <div class="thumb" @click="this.activeImg = 3">
-                        <img :src="slides[3].image" alt="Stray" />
-                    </div>
-                    <div class="thumb" @click="this.activeImg = 4">
-                        <img :src="slides[4].image" alt="Avengers" />
+                    <div class="thumb" v-for="(element, index) in slides" @click="this.activeImg = activeImg = index">
+                        <img :src="slides[index].image" :alt="slides[index].title"/>
                     </div>
                 </div>
 
